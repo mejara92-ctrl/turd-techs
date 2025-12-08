@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Turd Techs – Dog Poop Scooping in Lawton & Fort Sill</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Turd Techs picks up dog poop in Lawton, Fort Sill, Elgin and nearby. Weekly, bi-weekly and one-time yard cleanups. Book fast by call or text."
+  />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #f7fafc;
+      --bg-alt: #e6f3ff;
+      --card-bg: #ffffff;
+      --accent: #22c55e;
+      --accent-dark: #16a34a;
+      --accent-soft: #dcfce7;
+      --border-subtle: #e2e8f0;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --danger: #dc2626;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #e0ffef 0, #f7fafc 55%);
+      color: var(--text-main);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+    }
+
+    /* Header */
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 16px;
+      color: #facc15;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35);
+    }
+
+    .logo-text-main {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+
+    .logo-text-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .pill {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #0f172a;
+      color: #e5e7eb;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .phone-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.07);
+      font-weight: 600;
+    }
+
+    .phone-link span {
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    /* Layout */
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 22px 22px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 22px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    /* Hero text */
+
+    .hero-eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--danger);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .hero-title {
+      font-size: 30px;
+      line-height: 1.15;
+      margin: 0 0 10px;
+    }
+
+    .hero-title span {
+      color: var(--accent-dark);
+    }
+
+    .hero-sub {
+      margin: 0 0 14px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .hero-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .hero-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .hero-list li::before {
+      content: "✔";
+      color: var(--accent-dark);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .hero-footnote {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* CTA buttons */
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 14px 0 10px;
+    }
+
+    .btn-primary {
+      border: none;
+      border-radius: 999px;
+      padding: 11px 18px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      box-shadow: 0 18px 40px rgba(22, 163, 74, 0.45);
+      transition: background 0.12s ease, transform 0.06s ease,
+        box-shadow 0.12s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 22px 44px rgba(22, 163, 74, 0.55);
+    }
+
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 10px 14px;
+      border: 1px dashed rgba(15, 23, 42, 0.18);
+      background: rgba(255, 255, 255, 0.7);
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Pricing */
+
+    .pricing-card h2 {
+      font-size: 18px;
+      margin: 0 0 8px;
+    }
+
+    .pricing-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+    .price-tile {
+      border-radius: 14px;
+      padding: 10px 10px 9px;
+      background: #f9fafb;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .price-name {
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-size: 12px;
+    }
+
+    .price-amt {
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 3px;
+      color: var(--accent-dark);
+    }
+
+    .price-note {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .price-tagline {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* How it works + service area */
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
+      gap: 20px;
+      margin-top: 26px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      margin: 0 0 8px;
+    }
+
+    .steps-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .step-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .step-text strong {
+      display: block;
+      color: var(--text-main);
+      margin-bottom: 1px;
+    }
+
+    .service-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 11px;
+    }
+
+    .service-chip {
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+
+    .faq-note {
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+
+    .footer {
+      margin-top: 28px;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 10px;
+    }
+
+    .footer strong {
+      color: var(--accent-dark);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bottom-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .pricing-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo">
+        <div class="logo-badge">💩</div>
+        <div>
+          <div class="logo-text-main">Turd Techs</div>
+          <div class="logo-text-sub">Pet waste removal • Lawton &amp; Fort Sill</div>
+        </div>
+      </div>
+      <div class="header-cta">
+        <div class="pill">Locally owned • Veteran friendly</div>
+        <a class="phone-link" href="tel:15802156999">
+          Call / text
+          <span>(580) 215-6999</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- HERO + PRICING -->
+    <section class="hero-grid">
+      <!-- Left: hero copy -->
+      <article class="card">
+        <div class="hero-eyebrow">Dog poop is temporary. The smell is forever.</div>
+        <h1 class="hero-title">
+          We scoop the <span>turd</span><br />so you can enjoy the yard.
+        </h1>
+        <p class="hero-sub">
+          Weekly, bi-weekly, and one-time dog poop pickup for busy families in
+          Lawton, Fort Sill, Elgin &amp; nearby. Fast, reliable, and zero
+          judgement about how bad it is right now.
+        </p>
+
+        <ul class="hero-list">
+          <li>Up to 3 dogs per yard – flat rates that make sense.</li>
+          <li>We scoop, bag, and haul it away so your trash can doesn’t suffer.</li>
+          <li>Perfect for rentals, PCS moves, Airbnbs, and “my in-laws are coming.”</li>
+        </ul>
+
+        <div class="hero-cta-row">
+          <a class="btn-primary" href="tel:15802156999">
+            📞 Call or text to book
+          </a>
+          <div class="btn-secondary">
+            💬 Text us a picture of your yard for a quick quote.
+          </div>
+        </div>
+
+        <p class="hero-footnote">
+          No contracts. Pause or cancel anytime. We just ask that the dogs are
+          put up while we scoop.
+        </p>
+      </article>
+
+      <!-- Right: pricing -->
+      <article class="card pricing-card">
+        <h2>Simple, flat pricing</h2>
+        <p class="pricing-sub">
+          Final quote may adjust slightly based on yard size or “first time”
+          condition, but these are the typical rates for up to 3 dogs.
+        </p>
+
+        <div class="pricing-grid">
+          <div class="price-tile">
+            <div class="price-name">Weekly cleanup</div>
+            <div class="price-amt">$XX / week</div>
+            <div class="price-note">
+              Best for busy yards. We swing by once a week and keep things under
+              control.
+            </div>
+          </div>
+          <div class="price-tile">
+            <div class="price-name">Bi-weekly cleanup</div>
+            <div class="price-amt">$XX / visit</div>
+            <div class="price-note">
+              Every other week for moderate use yards. Great balance of price
+              and freshness.
+            </div>
+          </div>
+          <div class="price-tile">
+            <div class="price-name">One-time / first visit</div>
+            <div class="price-amt">$XX+</div>
+            <div class="price-note">
+              “Haven’t picked up in a while.” No shame. We’ll reset the yard so
+              it’s ready for a regular schedule.
+            </div>
+          </div>
+        </div>
+
+        <p class="price-tagline">
+          <strong>Gift idea:</strong> Buy a month of poop scooping for a new
+          puppy owner or that friend with too many dogs.
+        </p>
+      </article>
+    </section>
+
+    <!-- HOW IT WORKS + SERVICE AREA -->
+    <section class="bottom-grid">
+      <article class="card">
+        <h2 class="section-title">How Turd Techs works</h2>
+        <ul class="steps-list">
+          <li class="step-row">
+            <div class="step-num">1</div>
+            <div class="step-text">
+              <strong>Call or text your address.</strong>
+              Tell us how many dogs you have and how often you’d like service
+              (weekly, bi-weekly, or just once).
+            </div>
+          </li>
+          <li class="step-row">
+            <div class="step-num">2</div>
+            <div class="step-text">
+              <strong>We swing by &amp; scoop.</strong>
+              We walk the yard, pick up every pile we can find, and double-check
+              gates are closed when we leave.
+            </div>
+          </li>
+          <li class="step-row">
+            <div class="step-num">3</div>
+            <div class="step-text">
+              <strong>You enjoy a clean yard.</strong>
+              No more landmines, no more arguing about whose turn it is. Just
+              grass, kids, and happy dogs.
+            </div>
+          </li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2 class="section-title">Service area</h2>
+        <p style="font-size:13px;color:var(--text-muted);margin:0 0 6px;">
+          We’re based in Lawton and focus on the surrounding communities.
+        </p>
+
+        <div class="service-chip-row">
+          <span class="service-chip">Lawton</span>
+          <span class="service-chip">Fort Sill</span>
+          <span class="service-chip">Elgin</span>
+          <span class="service-chip">Cache</span>
+          <span class="service-chip">Medicine Park</span>
+          <span class="service-chip">Nearby rural areas (case-by-case)</span>
+        </div>
+
+        <p class="faq-note">
+          Not sure if you’re in range? Shoot us a text with your address and
+          we’ll let you know in a few minutes.
+        </p>
+      </article>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div>
+        <strong>Turd Techs</strong> • Pet waste removal for Lawton, Fort Sill,
+        Elgin, Cache &amp; surrounding areas
+      </div>
+      <div>Call or text (580) 215-6999 • No contracts • Dog-lovers only</div>
+    </footer>
+  </main>
+</body>
+</html>
