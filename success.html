@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Turd Techs — Booking Confirmed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <style>
+    :root{
+      --bg0:#070A10; --bg1:#0B1020; --card:#0F172A;
+      --border:rgba(148,163,184,.18);
+      --text:#E5E7EB; --muted:#94A3B8;
+      --accent:#34D399; --accent2:#22C55E;
+      --accentGlow: rgba(52,211,153,.35);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(52,211,153,.16), transparent 60%),
+        radial-gradient(900px 600px at 85% 20%, rgba(59,130,246,.12), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:22px 16px;
+    }
+    .wrap{ width:min(860px, 100%); }
+    .top{
+      display:flex; align-items:center; gap:12px;
+      margin-bottom:14px;
+    }
+    .logo{
+      width:42px;height:42px;border-radius:14px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), transparent 55%),
+        linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 18px 55px var(--accentGlow);
+      display:flex; align-items:center; justify-content:center;
+      font-weight:900; letter-spacing:.04em; color:#061017;
+      user-select:none;
+    }
+    .brand{
+      display:flex; flex-direction:column;
+      line-height:1.1;
+    }
+    .brand strong{
+      font-size:13px; letter-spacing:.12em; text-transform:uppercase;
+    }
+    .brand span{ font-size:12px; color:var(--muted); margin-top:2px; }
+    .card{
+      border-radius:20px;
+      border:1px solid var(--border);
+      background: rgba(15,23,42,.75);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 30px 90px rgba(0,0,0,.35);
+      padding:18px;
+      overflow:hidden;
+    }
+    h1{ margin:0 0 8px; font-size:28px; letter-spacing:-.02em; }
+    p{ margin:0 0 12px; color:var(--muted); font-size:13px; line-height:1.55; }
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:9px 14px; border-radius:999px;
+      border:1px solid rgba(52,211,153,.22);
+      background: rgba(2,6,23,.22);
+      color:var(--muted);
+      font-size:12px;
+      margin:10px 0 14px;
+    }
+    .pill strong{ color:var(--accent); }
+    .grid{
+      display:grid; grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:10px; margin-top:12px;
+    }
+    .mini{
+      border-radius:16px;
+      border:1px solid rgba(148,163,184,.18);
+      background: rgba(2,6,23,.22);
+      padding:12px;
+      font-size:12px;
+    }
+    .mini strong{ display:block; margin-bottom:4px; font-size:13px; }
+    .mini span{ color:var(--muted); }
+    .actions{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:14px;
+    }
+    .btn{
+      border:none; cursor:pointer;
+      border-radius:999px;
+      padding:11px 16px;
+      font-weight:800; font-size:13px;
+      display:inline-flex; align-items:center; gap:8px;
+      text-decoration:none;
+      transition: transform .08s ease, box-shadow .15s ease;
+      user-select:none;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#061017;
+      box-shadow: 0 18px 60px var(--accentGlow);
+    }
+    .btn.primary:hover{ transform: translateY(-1px); }
+    .btn.ghost{
+      background: rgba(2,6,23,.25);
+      border:1px solid rgba(148,163,184,.2);
+      color:var(--text);
+    }
+    .fine{ margin-top:10px; font-size:12px; color:var(--muted); }
+    code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size:12px; color: var(--text);
+      background: rgba(2,6,23,.28);
+      padding:2px 6px;
+      border-radius:8px;
+      border:1px solid rgba(148,163,184,.14);
+    }
+    @media (max-width:900px){ .grid{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="logo">TT</div>
+      <div class="brand">
+        <strong>TURD TECHS</strong>
+        <span>Booking confirmed</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h1>You’re booked. ✅</h1>
+      <p>
+        Thanks for the order — we’ve got it. Next step is us confirming gate access + timing.
+      </p>
+
+      <div class="pill">
+        We’ll text you <strong>within 1 hour</strong>.
+      </div>
+
+      <div class="grid">
+        <div class="mini">
+          <strong>What happens now</strong>
+          <span>We confirm your address + preferred day/time by text.</span>
+        </div>
+        <div class="mini">
+          <strong>What you should do</strong>
+          <span>Make sure the gate is accessible and pets are secured.</span>
+        </div>
+        <div class="mini">
+          <strong>Need to change details?</strong>
+          <span>Just reply to our text, or call anytime.</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn primary" href="tel:15802156999">☎ Call / text (580) 215-6999</a>
+        <a class="btn ghost" href="/">← Back to Turd Techs</a>
+      </div>
+
+      <div class="fine">
+        If Stripe gave you a session id, it may look like: <code id="sid">loading…</code>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const sid = params.get("session_id");
+    document.getElementById("sid").textContent = sid ? sid : "no session_id found";
+  </script>
+</body>
+</html>
