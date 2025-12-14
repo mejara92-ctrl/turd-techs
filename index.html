@@ -6,786 +6,842 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Turd Techs picks up dog poop in Lawton, Fort Sill, Elgin and nearby. Simple flat-rate pet waste removal so your yard stays clean without you touching a bag."
+    content="Turd Techs scoops dog poop in Lawton, Fort Sill, Elgin and nearby. Pick a plan, add-ons if needed, and check out in seconds. Clean yard, zero landmines."
   />
 
   <style>
-    :root {
-      --bg: #f5faf6;
-      --card-bg: #ffffff;
-      --accent: #20c26b;
-      --accent-dark: #109352;
-      --accent-soft: #dcf7e7;
-      --text-main: #1a1a1a;
-      --text-muted: #64748b;
-      --border-subtle: #e2e8f0;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      background: radial-gradient(circle at top, #e8fff2 0, #f5faf6 45%, #ffffff 100%);
-      color: var(--text-main);
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 20px 16px 60px;
-    }
-
-    /* HEADER */
-
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 26px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-badge {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      background: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      color: #fff;
-      font-size: 18px;
-    }
-
-    .brand-text {
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      font-size: 15px;
-      text-transform: uppercase;
-    }
-
-    .brand-sub {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .header-cta {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 6px;
-      font-size: 11px;
-      color: var(--text-muted);
-      text-align: right;
-    }
-
-    .pill-call {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: #ffffff;
-      border: 1px solid rgba(16, 148, 82, 0.15);
-      box-shadow: 0 10px 25px rgba(15, 118, 110, 0.08);
-      font-size: 12px;
-    }
-
-    .pill-call span {
-      font-weight: 700;
-      color: var(--accent-dark);
-    }
-
-    /* HERO */
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 28px;
-      align-items: center;
-      margin-bottom: 32px;
-    }
-
-    .hero-main h1 {
-      font-size: 32px;
-      line-height: 1.1;
-      margin: 0 0 12px;
-    }
-
-    .hero-main h1 span {
-      color: var(--accent-dark);
-    }
-
-    .hero-sub {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-      max-width: 420px;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 18px;
-      font-size: 11px;
-    }
-
-    .badge {
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: #e2fbe8;
-      color: #047857;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .badge-outline {
-      background: transparent;
-      border: 1px dashed #a7f3d0;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .btn-primary {
-      border: none;
-      border-radius: 999px;
-      padding: 11px 20px;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      background: var(--accent);
-      color: #fff;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 18px 45px rgba(16, 185, 129, 0.5);
-      transition: background 0.15s ease, transform 0.05s ease,
-        box-shadow 0.15s ease;
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-dark);
-      transform: translateY(-1px);
-      box-shadow: 0 22px 55px rgba(5, 150, 105, 0.6);
-    }
-
-    .btn-ghost {
-      border-radius: 999px;
-      padding: 10px 16px;
-      border: 1px dashed #cbd5f5;
-      background: #f8fafc;
-      font-size: 13px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--text-muted);
-    }
-
-    .hero-note {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .hero-card {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 18px 18px 16px;
-      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
-      border: 1px solid rgba(226, 232, 240, 0.9);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .hero-card-sub {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    .plan-row {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 10px;
-      font-size: 12px;
-    }
-
-    .plan-pill {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 7px 9px;
-      border-radius: 10px;
-      background: #f8fafc;
-    }
-
-    .plan-pill strong {
-      font-size: 13px;
-    }
-
-    .plan-price {
-      font-weight: 700;
-      color: var(--accent-dark);
-    }
-
-    .hero-sm-note {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .hero-icon {
-      position: absolute;
-      right: -18px;
-      bottom: -16px;
-      width: 120px;
-      height: 120px;
-      background: radial-gradient(circle at center, #bbf7d0 0, #22c55e 40%, #16a34a 100%);
-      border-radius: 40% 60% 70% 30%;
-      opacity: 0.25;
-    }
-
-    /* SECTION WRAPPER */
-
-    .section {
-      margin-top: 32px;
-    }
-
-    .section-title {
-      font-size: 20px;
-      margin: 0 0 8px;
-    }
-
-    .section-sub {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-
-    /* HOW IT WORKS */
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .step-card {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 12px 12px 11px;
-      border: 1px solid var(--border-subtle);
-      font-size: 12px;
-    }
-
-    .step-num {
-      width: 22px;
-      height: 22px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 12px;
-      margin-bottom: 6px;
-    }
-
-    .step-card strong {
-      display: block;
-      margin-bottom: 3px;
-      font-size: 13px;
-    }
-
-    /* PRICING */
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .price-card {
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 14px 14px 13px;
-      border: 1px solid var(--border-subtle);
-      font-size: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .price-label {
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .price-main {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--accent-dark);
-    }
-
-    .price-tagline {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .price-list {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--text-muted);
-      font-size: 11px;
-    }
-
-    /* SERVICE AREA / CONTACT */
-
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 18px;
-    }
-
-    .area-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 8px;
-      font-size: 12px;
-    }
-
-    .area-pill {
-      padding: 5px 10px;
-      border-radius: 999px;
-      background: #e5f6ff;
-      color: #0c4a6e;
-    }
-
-    .contact-card {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 14px 14px 12px;
-      border: 1px solid var(--border-subtle);
-      font-size: 12px;
-    }
-
-    .contact-row {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .contact-label {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .contact-phone {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--accent-dark);
-    }
-
-    .contact-note {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .contact-buttons {
-      margin-top: 10px;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .btn-line {
-      border-radius: 999px;
-      padding: 8px 14px;
-      border: 1px solid #cbd5f5;
-      background: #f8fafc;
-      font-size: 12px;
-      cursor: pointer;
-    }
-
-    /* FAQ */
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px 20px;
-      font-size: 12px;
-    }
-
-    details {
-      background: #ffffff;
-      border-radius: 12px;
-      border: 1px solid var(--border-subtle);
-      padding: 8px 10px;
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: 600;
-      color: #1f2933;
-      list-style: none;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    details p {
-      margin: 5px 0 2px;
-      color: var(--text-muted);
-      font-weight: 400;
-      font-size: 12px;
-    }
-
-    /* FOOTER */
-
-    .footer {
-      margin-top: 34px;
-      padding-top: 14px;
-      border-top: 1px solid var(--border-subtle);
-      font-size: 11px;
-      color: var(--text-muted);
-      text-align: center;
-    }
-
-    .footer strong {
-      color: var(--accent-dark);
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-card {
-        max-width: 360px;
-        margin: 0 auto;
-      }
-
-      .steps-grid,
-      .pricing-grid,
-      .two-col,
-      .faq-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .header-cta {
-        align-items: flex-start;
-        text-align: left;
-      }
+    :root{
+      /* Night mode */
+      --bg0:#070A10;
+      --bg1:#0B1020;
+      --card:#0F172A;
+      --card2:#0B1326;
+      --border:rgba(148,163,184,.18);
+      --text:#E5E7EB;
+      --muted:#94A3B8;
+
+      /* Accent = neon-ish “tech” green */
+      --accent:#34D399;
+      --accent2:#22C55E;
+      --accentGlow: rgba(52,211,153,.35);
+
+      --warning:#F59E0B;
+      --danger:#FB7185;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(52,211,153,.16), transparent 60%),
+        radial-gradient(900px 600px at 85% 20%, rgba(59,130,246,.12), transparent 55%),
+        radial-gradient(900px 600px at 50% 90%, rgba(251,113,133,.08), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    button{ font-family:inherit; }
+
+    .page{
+      max-width:1120px;
+      margin:0 auto;
+      padding:22px 16px 64px;
+    }
+
+    /* Header */
+    .header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:22px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), transparent 55%),
+        linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 18px 55px var(--accentGlow);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      letter-spacing:.04em;
+      color:#061017;
+      user-select:none;
+    }
+
+    .brand-title{
+      font-weight:850;
+      letter-spacing:.12em;
+      font-size:13px;
+      text-transform:uppercase;
+      line-height:1.1;
+    }
+    .brand-sub{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:2px;
+    }
+
+    .header-right{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:8px;
+      text-align:right;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:9px 14px;
+      border-radius:999px;
+      border:1px solid rgba(52,211,153,.22);
+      background: rgba(15,23,42,.72);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 55px rgba(0,0,0,.25);
+      font-size:12px;
+      color:var(--muted);
+    }
+    .pill strong{
+      color:var(--accent);
+      font-weight:800;
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: minmax(0,1.25fr) minmax(0,1fr);
+      gap:22px;
+      align-items:stretch;
+      margin-bottom:26px;
+    }
+
+    .hero-main{
+      padding:22px;
+      border-radius:20px;
+      border:1px solid var(--border);
+      background: rgba(15,23,42,.55);
+      backdrop-filter: blur(10px);
+      position:relative;
+      overflow:hidden;
+      box-shadow: 0 30px 90px rgba(0,0,0,.35);
+    }
+
+    .hero-main::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(600px 220px at 20% 10%, rgba(52,211,153,.18), transparent 70%),
+        radial-gradient(600px 220px at 90% 30%, rgba(59,130,246,.12), transparent 70%);
+      pointer-events:none;
+      opacity:.9;
+    }
+
+    .hero-inner{ position:relative; }
+
+    h1{
+      margin:0 0 10px;
+      font-size:34px;
+      line-height:1.05;
+      letter-spacing:-.02em;
+    }
+    h1 .accent{ color:var(--accent); }
+
+    .sub{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:14px;
+      max-width:560px;
+    }
+
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:0 0 16px;
+    }
+
+    .badge{
+      font-size:11px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.18);
+      background: rgba(2,6,23,.25);
+      color: var(--muted);
+    }
+    .badge.hot{
+      border-color: rgba(52,211,153,.28);
+      color: var(--accent);
+      background: rgba(52,211,153,.07);
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      margin-bottom:10px;
+    }
+
+    .btn{
+      border:none;
+      cursor:pointer;
+      border-radius:999px;
+      padding:11px 18px;
+      font-weight:750;
+      font-size:14px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      transition: transform .08s ease, box-shadow .15s ease, background .15s ease;
+      user-select:none;
+    }
+
+    .btn.primary{
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#061017;
+      box-shadow: 0 18px 60px var(--accentGlow);
+    }
+    .btn.primary:hover{ transform: translateY(-1px); box-shadow: 0 22px 80px rgba(52,211,153,.42); }
+
+    .btn.ghost{
+      background: rgba(15,23,42,.35);
+      color: var(--text);
+      border:1px solid rgba(148,163,184,.2);
+    }
+    .btn.ghost:hover{ transform: translateY(-1px); }
+
+    .fineprint{
+      color:var(--muted);
+      font-size:12px;
+      margin-top:6px;
+    }
+
+    /* Cart card */
+    .card{
+      border-radius:20px;
+      border:1px solid var(--border);
+      background: rgba(15,23,42,.75);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 30px 90px rgba(0,0,0,.35);
+      padding:18px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card h3{
+      margin:0 0 4px;
+      font-size:16px;
+      letter-spacing:-.01em;
+    }
+    .card p{
+      margin:0 0 14px;
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    .select-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+      margin-bottom:12px;
+    }
+
+    .option{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid rgba(148,163,184,.18);
+      background: rgba(2,6,23,.22);
+      cursor:pointer;
+      transition: border-color .15s ease, background .15s ease;
+    }
+    .option:hover{
+      border-color: rgba(52,211,153,.25);
+      background: rgba(2,6,23,.35);
+    }
+    .option.active{
+      border-color: rgba(52,211,153,.55);
+      background: rgba(52,211,153,.08);
+    }
+    .opt-title{
+      font-weight:800;
+      margin:0 0 3px;
+      font-size:13px;
+    }
+    .opt-sub{
+      margin:0;
+      color:var(--muted);
+      font-size:11px;
+    }
+    .price{
+      font-weight:900;
+      color: var(--accent);
+      font-size:13px;
+      white-space:nowrap;
+    }
+
+    .addons{
+      margin-top:8px;
+      padding-top:12px;
+      border-top:1px solid rgba(148,163,184,.16);
+    }
+    .addons h4{
+      margin:0 0 10px;
+      font-size:12px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+
+    .addon-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px 10px;
+      border-radius:12px;
+      border:1px solid rgba(148,163,184,.16);
+      background: rgba(2,6,23,.18);
+      margin-bottom:8px;
+    }
+    .addon-row label{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      cursor:pointer;
+      font-size:12px;
+    }
+    .addon-row input{ margin-top:2px; }
+
+    .total{
+      margin-top:12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid rgba(52,211,153,.28);
+      background: rgba(52,211,153,.06);
+    }
+    .total strong{ font-size:13px; }
+    .total .amt{
+      font-size:16px;
+      font-weight:950;
+      color: var(--accent);
+    }
+
+    .checkout-row{
+      margin-top:12px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .status{
+      margin-top:10px;
+      font-size:12px;
+      color: var(--muted);
+      min-height:16px;
+    }
+    .status.error{ color: var(--danger); }
+    .status.ok{ color: var(--accent); }
+
+    /* Sections */
+    .section{
+      margin-top:28px;
+      padding:18px;
+      border-radius:20px;
+      border:1px solid var(--border);
+      background: rgba(15,23,42,.45);
+      backdrop-filter: blur(10px);
+    }
+    .section h2{
+      margin:0 0 8px;
+      font-size:18px;
+    }
+    .section .desc{
+      margin:0 0 14px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:12px;
+    }
+    .mini{
+      border-radius:16px;
+      border:1px solid rgba(148,163,184,.18);
+      background: rgba(2,6,23,.22);
+      padding:12px;
+      font-size:12px;
+    }
+    .mini strong{
+      display:block;
+      margin-bottom:4px;
+      font-size:13px;
+    }
+    .mini p{
+      margin:0;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .two{
+      display:grid;
+      grid-template-columns: minmax(0,1.1fr) minmax(0,1fr);
+      gap:12px;
+      align-items:stretch;
+    }
+
+    .pills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+    }
+    .pill2{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.18);
+      background: rgba(2,6,23,.18);
+      color: var(--muted);
+      font-size:12px;
+    }
+
+    details{
+      border-radius:14px;
+      border:1px solid rgba(148,163,184,.18);
+      background: rgba(2,6,23,.22);
+      padding:10px 12px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:800;
+      font-size:13px;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details p{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    .faq{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:10px;
+    }
+
+    .footer{
+      margin-top:26px;
+      text-align:center;
+      color: var(--muted);
+      font-size:12px;
+      padding-top:14px;
+      border-top:1px solid rgba(148,163,184,.16);
+    }
+    .footer strong{ color: var(--accent); }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero{ grid-template-columns: 1fr; }
+      .grid3{ grid-template-columns: 1fr; }
+      .two{ grid-template-columns: 1fr; }
+      .faq{ grid-template-columns: 1fr; }
+      .header{ flex-direction:column; align-items:flex-start; }
+      .header-right{ align-items:flex-start; text-align:left; }
     }
   </style>
 </head>
+
 <body>
   <main class="page">
     <!-- HEADER -->
     <header class="header">
       <div class="brand">
-        <div class="brand-badge">TT</div>
+        <div class="logo">TT</div>
         <div>
-          <div class="brand-text">TURD TECHS</div>
+          <div class="brand-title">TURD TECHS</div>
           <div class="brand-sub">Pet waste removal • Lawton area</div>
         </div>
       </div>
-      <div class="header-cta">
-        <div class="pill-call">
-          Dog poop emergency?
-          <span><a href="tel:15802156999">(580) 215-6999</a></span>
+
+      <div class="header-right">
+        <div class="pill">
+          Fast book: <strong><a href="tel:15802156999">(580) 215-6999</a></strong>
         </div>
-        <div>Call or text for fastest service.</div>
+        <div style="font-size:12px;color:var(--muted);">
+          Text works best. We’ll hit you back quick.
+        </div>
       </div>
     </header>
 
     <!-- HERO -->
     <section class="hero">
       <div class="hero-main">
-        <h1>
-          We pick up the <span>dog poop</span><br />
-          so you don’t have to.
-        </h1>
-        <p class="hero-sub">
-          Local pet waste removal for busy Lawton, Fort Sill & Elgin families.
-          Flat rates, no contracts, no guilt when the yard got away from you.
-        </p>
+        <div class="hero-inner">
+          <h1>
+            Clean yard.<br/>
+            <span class="accent">Zero landmines.</span>
+          </h1>
+          <p class="sub">
+            Turd Techs keeps Lawton, Fort Sill, and Elgin backyards looking sharp.
+            You live your life — we handle the gross part.
+          </p>
 
-        <div class="hero-badges">
-          <div class="badge">Weekly & bi-weekly service</div>
-          <div class="badge badge-outline">Up to 3 dogs • normal city lots</div>
-          <div class="badge badge-outline">Military-friendly scheduling</div>
-        </div>
+          <div class="badges">
+            <span class="badge hot">Weekly / Bi-weekly</span>
+            <span class="badge">Haul-away included</span>
+            <span class="badge">Military-friendly scheduling</span>
+          </div>
 
-        <div class="hero-actions">
-          <a href="tel:15802156999" class="btn-primary">
-            ☎ Call / text now
-          </a>
-          <a href="#pricing" class="btn-ghost">
-            💩 See plans & pricing
-          </a>
-        </div>
+          <div class="actions">
+            <a class="btn primary" href="#book">
+              💩 Book in 30 seconds
+            </a>
+            <a class="btn ghost" href="tel:15802156999">
+              ☎ Call / text
+            </a>
+          </div>
 
-        <div class="hero-note">
-          Perfect for backyards, side yards, and rental properties. We haul the
-          bags away so your trash doesn’t smell like a kennel.
+          <div class="fineprint">
+            Standard pricing assumes up to 3 dogs on a normal city lot.
+            Got a monster yard? Text a photo — we’ll quote before we roll.
+          </div>
         </div>
       </div>
 
-      <aside class="hero-card">
-        <div class="hero-card-title">Typical yard, weekly visits</div>
-        <div class="hero-card-sub">
-          For most families with up to three dogs and a standard fenced yard.
-        </div>
+      <!-- CART / BOOKING -->
+      <aside id="book" class="card">
+        <h3>Pick a plan → Checkout</h3>
+        <p>No contracts. No weird apps. Just scoop service that shows up.</p>
 
-        <div class="plan-row">
-          <div class="plan-pill">
+        <div class="select-grid" id="planGrid">
+          <div class="option active" data-plan="initial" data-amount="6000">
             <div>
-              <strong>First-time clean-up</strong>
-              <div class="price-tagline">Get the yard back under control</div>
+              <div class="opt-title">First-time clean-up</div>
+              <div class="opt-sub">Get the yard back under control.</div>
             </div>
-            <div class="plan-price">From $60</div>
+            <div class="price">$60+</div>
           </div>
 
-          <div class="plan-pill">
+          <div class="option" data-plan="weekly" data-amount="10000">
             <div>
-              <strong>Weekly service</strong>
-              <div class="price-tagline">Keep it clean all month</div>
+              <div class="opt-title">Weekly (4 visits)</div>
+              <div class="opt-sub">Most popular — stay clean all month.</div>
             </div>
-            <div class="plan-price">$25 / visit</div>
+            <div class="price">$100</div>
           </div>
 
-          <div class="plan-pill">
+          <div class="option" data-plan="biweekly" data-amount="6000">
             <div>
-              <strong>Bi-weekly service</strong>
-              <div class="price-tagline">Great for smaller yards</div>
+              <div class="opt-title">Bi-weekly (2 visits)</div>
+              <div class="opt-sub">Solid option for lighter use.</div>
             </div>
-            <div class="plan-price">$30 / visit</div>
+            <div class="price">$60</div>
           </div>
         </div>
 
-        <div class="hero-sm-note">
-          Prices may vary for very large yards or heavy build-up. Text a photo
-          for a quick quote.
+        <div class="addons">
+          <h4>Add-ons</h4>
+
+          <div class="addon-row">
+            <label>
+              <input type="checkbox" id="addonExtraDog" />
+              <span>
+                Extra dog (4+ dogs)
+                <div style="color:var(--muted);font-size:11px;margin-top:2px;">
+                  Adds time + steps. Worth it.
+                </div>
+              </span>
+            </label>
+            <div class="price">+$10</div>
+          </div>
+
+          <div class="addon-row">
+            <label>
+              <input type="checkbox" id="addonLargeYard" />
+              <span>
+                Large yard / heavy build-up
+                <div style="color:var(--muted);font-size:11px;margin-top:2px;">
+                  Big lot, tall grass, “it’s been a minute.”
+                </div>
+              </span>
+            </label>
+            <div class="price">+$15</div>
+          </div>
+
+          <div class="addon-row">
+            <label>
+              <input type="checkbox" id="addonSameDay" />
+              <span>
+                Same-day rush (if available)
+                <div style="color:var(--muted);font-size:11px;margin-top:2px;">
+                  When you need it handled ASAP.
+                </div>
+              </span>
+            </label>
+            <div class="price">+$20</div>
+          </div>
+
+          <div class="total">
+            <strong>Total today</strong>
+            <div class="amt" id="totalAmt">$60.00</div>
+          </div>
+
+          <div class="checkout-row">
+            <button class="btn primary" id="checkoutBtn" type="button">Checkout</button>
+            <a class="btn ghost" href="tel:15802156999">Text us instead</a>
+          </div>
+
+          <div class="status" id="status"></div>
+
+          <div class="fineprint" style="margin-top:10px;">
+            After checkout, you’ll get a confirmation screen.
+            We’ll text to confirm gate access + timing.
+          </div>
         </div>
-        <div class="hero-icon"></div>
       </aside>
     </section>
 
     <!-- HOW IT WORKS -->
     <section class="section">
-      <h2 class="section-title">How Turd Techs works</h2>
-      <p class="section-sub">
-        No apps, no subscriptions to manage. Just simple, reliable dog poop
-        pickup on a schedule that fits your life.
-      </p>
+      <h2>How it works</h2>
+      <p class="desc">Simple ops. Clean results. No drama.</p>
 
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-num">1</div>
-          <strong>Call or text your yard details.</strong>
-          <p>
-            Tell us your area, number of dogs, and how scary the backyard is on
-            a scale from “not bad” to “we don’t talk about the back corner.”
-          </p>
+      <div class="grid3">
+        <div class="mini">
+          <strong>1) Book</strong>
+          <p>Pick a plan, add-ons if needed, and checkout.</p>
         </div>
-        <div class="step-card">
-          <div class="step-num">2</div>
-          <strong>We scoop, double-bag and haul away.</strong>
-          <p>
-            We walk the yard in a grid, scoop everything, double-bag it, and
-            take the bags with us so your trash cans stay fresh.
-          </p>
+        <div class="mini">
+          <strong>2) Scoop + haul-away</strong>
+          <p>We sweep the yard, double-bag, and take it with us.</p>
         </div>
-        <div class="step-card">
-          <div class="step-num">3</div>
-          <strong>You enjoy a clean yard.</strong>
-          <p>
-            Kids, guests, and boots can finally go out without landmines.
-            Adjust or pause service any time with a quick text.
-          </p>
+        <div class="mini">
+          <strong>3) Enjoy the yard</strong>
+          <p>Kids, boots, guests — no surprises.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- PRICING -->
-    <section id="pricing" class="section">
-      <h2 class="section-title">Simple, flat-rate plans</h2>
-      <p class="section-sub">
-        Up to 3 dogs and a standard fenced backyard. Need something different?
-        Text us a photo and we’ll quote it before we ever show up.
-      </p>
-
-      <div class="pricing-grid">
-        <article class="price-card">
-          <div class="price-label">One-time or “oh no” clean</div>
-          <div class="price-main">From $60</div>
-          <div class="price-tagline">Great before parties, move-outs, or mowing.</div>
-          <ul class="price-list">
-            <li>Full sweep of front and back yard</li>
-            <li>Double-bagging & haul-away included</li>
-            <li>Best when it’s been a while 🫣</li>
-          </ul>
-        </article>
-
-        <article class="price-card">
-          <div class="price-label">Weekly service</div>
-          <div class="price-main">$25 / visit</div>
-          <div class="price-tagline">Most popular for multi-dog families.</div>
-          <ul class="price-list">
-            <li>Same day & time each week</li>
-            <li>We text you when we’re on the way</li>
-            <li>Great for kids & backyard hangouts</li>
-          </ul>
-        </article>
-
-        <article class="price-card">
-          <div class="price-label">Bi-weekly service</div>
-          <div class="price-main">$30 / visit</div>
-          <div class="price-tagline">Budget-friendly for smaller yards.</div>
-          <ul class="price-list">
-            <li>Every other week yard clean-up</li>
-            <li>Up to 3 dogs on a standard lot</li>
-            <li>Easy to upgrade if you need more</li>
-          </ul>
-        </article>
       </div>
     </section>
 
     <!-- SERVICE AREA + CONTACT -->
     <section class="section">
-      <div class="two-col">
+      <div class="two">
         <div>
-          <h2 class="section-title">Where we scoop</h2>
-          <p class="section-sub">
-            Turd Techs is locally owned and focused on the Lawton area so we can
-            keep routes tight and prices fair.
+          <h2>Service area</h2>
+          <p class="desc">
+            We keep routes tight so we can stay fast and consistent.
           </p>
-          <div class="area-list">
-            <span class="area-pill">Lawton</span>
-            <span class="area-pill">Fort Sill</span>
-            <span class="area-pill">Elgin</span>
-            <span class="area-pill">Fletcher</span>
-            <span class="area-pill">Cache</span>
-            <span class="area-pill">Medicine Park</span>
-            <span class="area-pill">Nearby communities</span>
+          <div class="pills">
+            <span class="pill2">Lawton</span>
+            <span class="pill2">Fort Sill</span>
+            <span class="pill2">Elgin</span>
+            <span class="pill2">Cache</span>
+            <span class="pill2">Fletcher</span>
+            <span class="pill2">Medicine Park</span>
           </div>
-          <p class="hero-note" style="margin-top:10px;">
-            Slightly outside the map? Text your address and we’ll let you know
-            if we can fit you into a route.
+          <p class="desc" style="margin-top:12px;">
+            Slightly outside? Text your address — if it fits a route, we’ll take it.
           </p>
         </div>
 
-        <aside class="contact-card">
-          <div class="contact-row">
-            <span class="contact-label">Call or text to book</span>
-            <a class="contact-phone" href="tel:15802156999">
-              (580) 215-6999
-            </a>
-            <span class="contact-note">
-              Text your city, number of dogs, and a photo of the yard for the
-              fastest quote.
-            </span>
+        <div class="card" style="margin:0;">
+          <h3>Book by text</h3>
+          <p>Fastest way to get locked in.</p>
+          <div class="pill" style="justify-content:space-between;">
+            <span>Call / Text</span>
+            <strong><a href="tel:15802156999">(580) 215-6999</a></strong>
           </div>
-
-          <div class="contact-buttons">
-            <a href="tel:15802156999" class="btn-primary" style="box-shadow:none;">
-              ☎ Call now
-            </a>
-            <button class="btn-line" type="button">
-              💬 Save our number for later
-            </button>
+          <div class="fineprint" style="margin-top:10px;">
+            Send: city + # of dogs + (optional) yard photo.
           </div>
-        </aside>
+        </div>
       </div>
     </section>
 
     <!-- FAQ -->
     <section class="section">
-      <h2 class="section-title">FAQ</h2>
-      <div class="faq-grid">
+      <h2>FAQ</h2>
+      <div class="faq">
         <details>
           <summary>Do I need to be home?</summary>
-          <p>
-            Nope. As long as we can access the yard (gate unlocked, no
-            aggressive dogs loose) we can scoop while you’re at work or on
-            post. We’ll text when we’re done.
-          </p>
+          <p>Nope. As long as we can access the yard (gate unlocked + no aggressive dogs loose), we can scoop while you’re at work or on post.</p>
         </details>
         <details>
-          <summary>What about rain or bad weather?</summary>
-          <p>
-            Light rain is fine. Severe weather, lightning, or iced-over yards
-            will be rescheduled. We’ll keep you updated by text.
-          </p>
+          <summary>Do you take the bags with you?</summary>
+          <p>Yes. We haul away so your trash doesn’t smell like a dog park.</p>
         </details>
         <details>
-          <summary>Do you take the poop with you?</summary>
-          <p>
-            Yes. We double-bag and haul it away so your trash cans don’t smell
-            like a dog park.
-          </p>
+          <summary>What about rain?</summary>
+          <p>Light rain is fine. Lightning / severe weather gets rescheduled.</p>
         </details>
         <details>
-          <summary>Can you do one-time move-out or landlord clean-ups?</summary>
-          <p>
-            Absolutely. We handle heavy build-ups for move-outs, rentals and new
-            tenants. Text a photo and we’ll quote it before we schedule.
-          </p>
+          <summary>Move-outs / rentals?</summary>
+          <p>Absolutely. Heavy build-ups are common for rentals. Text a photo and we’ll quote before scheduling.</p>
         </details>
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
-      <div>
-        <strong>Turd Techs</strong> • Pet waste removal for Lawton, Fort Sill,
-        Elgin & nearby
-      </div>
-      <div>Locally owned. Military-friendly. Zero poop left behind.</div>
+      <div><strong>Turd Techs</strong> • Pet waste removal for Lawton, Fort Sill, Elgin & nearby</div>
+      <div>Clean yard. Zero landmines. 💩</div>
     </footer>
   </main>
+
+  <script>
+    // ---- Simple internal cart state (front-end) ----
+    const planGrid = document.getElementById("planGrid");
+    const totalAmt = document.getElementById("totalAmt");
+    const statusEl = document.getElementById("status");
+    const checkoutBtn = document.getElementById("checkoutBtn");
+
+    const addonExtraDog = document.getElementById("addonExtraDog");
+    const addonLargeYard = document.getElementById("addonLargeYard");
+    const addonSameDay = document.getElementById("addonSameDay");
+
+    // amounts are in cents
+    const ADDONS = {
+      extraDog: 1000,
+      largeYard: 1500,
+      sameDay: 2000
+    };
+
+    let selectedPlan = "initial";
+    let baseAmount = 6000;
+
+    function formatUSD(cents){
+      return (cents / 100).toLocaleString("en-US", { style:"currency", currency:"USD" });
+    }
+
+    function calcTotal(){
+      let total = baseAmount;
+      if (addonExtraDog.checked) total += ADDONS.extraDog;
+      if (addonLargeYard.checked) total += ADDONS.largeYard;
+      if (addonSameDay.checked) total += ADDONS.sameDay;
+      totalAmt.textContent = formatUSD(total);
+      return total;
+    }
+
+    function setStatus(msg, type){
+      statusEl.textContent = msg || "";
+      statusEl.className = "status" + (type ? (" " + type) : "");
+    }
+
+    planGrid.addEventListener("click", (e) => {
+      const opt = e.target.closest(".option");
+      if (!opt) return;
+
+      document.querySelectorAll(".option").forEach(x => x.classList.remove("active"));
+      opt.classList.add("active");
+
+      selectedPlan = opt.getAttribute("data-plan");
+      baseAmount = parseInt(opt.getAttribute("data-amount") || "0", 10);
+
+      setStatus("");
+      calcTotal();
+    });
+
+    [addonExtraDog, addonLargeYard, addonSameDay].forEach(el => {
+      el.addEventListener("change", () => {
+        setStatus("");
+        calcTotal();
+      });
+    });
+
+    // ---- Stripe checkout (internal cart: calls your Worker) ----
+    checkoutBtn.addEventListener("click", async () => {
+      const total = calcTotal();
+
+      // Build a single “line item” to keep Worker logic simple.
+      // (Later we can send multiple items if you want.)
+      const planNameMap = {
+        initial: "First-time clean-up",
+        weekly: "Weekly (4 visits)",
+        biweekly: "Bi-weekly (2 visits)"
+      };
+
+      const addOnLabels = [];
+      if (addonExtraDog.checked) addOnLabels.push("Extra dog");
+      if (addonLargeYard.checked) addOnLabels.push("Large yard / heavy build-up");
+      if (addonSameDay.checked) addOnLabels.push("Same-day rush");
+
+      const label = addOnLabels.length
+        ? `${planNameMap[selectedPlan]} + ${addOnLabels.join(", ")}`
+        : planNameMap[selectedPlan];
+
+      setStatus("Opening secure checkout…", "ok");
+      checkoutBtn.disabled = true;
+
+      try {
+        const res = await fetch("/api/create-checkout-session", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            site: "turdtechs",
+            items: [
+              {
+                name: `Turd Techs — ${label}`,
+                amount: total,
+                quantity: 1
+              }
+            ],
+            meta: {
+              selectedPlan,
+              extraDog: addonExtraDog.checked ? "yes" : "no",
+              largeYard: addonLargeYard.checked ? "yes" : "no",
+              sameDay: addonSameDay.checked ? "yes" : "no"
+            }
+          })
+        });
+
+        const data = await res.json();
+        if (!res.ok) throw new Error(data?.error || "Checkout failed");
+
+        if (data?.url) {
+          window.location.href = data.url;
+          return;
+        }
+
+        throw new Error("No checkout URL returned");
+      } catch (err) {
+        console.error(err);
+        setStatus(err.message || "Something went wrong.", "error");
+        checkoutBtn.disabled = false;
+      }
+    });
+
+    // init
+    calcTotal();
+  </script>
 </body>
 </html>
