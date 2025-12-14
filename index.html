@@ -11,21 +11,17 @@
 
   <style>
     :root{
-      /* Night mode */
       --bg0:#070A10;
       --bg1:#0B1020;
       --card:#0F172A;
-      --card2:#0B1326;
       --border:rgba(148,163,184,.18);
       --text:#E5E7EB;
       --muted:#94A3B8;
 
-      /* Accent = neon-ish “tech” green */
       --accent:#34D399;
       --accent2:#22C55E;
       --accentGlow: rgba(52,211,153,.35);
 
-      --warning:#F59E0B;
       --danger:#FB7185;
     }
 
@@ -142,6 +138,7 @@
       position:relative;
       overflow:hidden;
       box-shadow: 0 30px 90px rgba(0,0,0,.35);
+      min-height: 420px;
     }
 
     .hero-main::before{
@@ -237,6 +234,66 @@
       margin-top:6px;
     }
 
+    /* Fill space block (left bubble) */
+    .value-grid{
+      margin-top:16px;
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:12px;
+    }
+    .value-card{
+      border-radius:16px;
+      border:1px solid rgba(148,163,184,.18);
+      background: rgba(2,6,23,.22);
+      padding:12px;
+    }
+    .value-card strong{
+      display:block;
+      font-size:13px;
+      margin-bottom:4px;
+    }
+    .value-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.45;
+    }
+    .checklist{
+      margin-top:12px;
+      border-radius:16px;
+      border:1px solid rgba(148,163,184,.18);
+      background: rgba(2,6,23,.22);
+      padding:12px;
+    }
+    .checklist h3{
+      margin:0 0 8px;
+      font-size:13px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+    .checklist ul{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:8px;
+    }
+    .checklist li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      font-size:12px;
+      color:var(--muted);
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: rgba(52,211,153,.85);
+      box-shadow: 0 0 0 4px rgba(52,211,153,.12);
+      margin-top:3px;
+      flex:0 0 auto;
+    }
+
     /* Cart card */
     .card{
       border-radius:20px;
@@ -296,6 +353,7 @@
       margin:0;
       color:var(--muted);
       font-size:11px;
+      line-height:1.3;
     }
     .price{
       font-weight:900;
@@ -479,6 +537,7 @@
       .faq{ grid-template-columns: 1fr; }
       .header{ flex-direction:column; align-items:flex-start; }
       .header-right{ align-items:flex-start; text-align:left; }
+      .value-grid{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -535,7 +594,29 @@
 
           <div class="fineprint">
             Standard pricing assumes up to 3 dogs on a normal city lot.
-            Got a monster yard? Text a photo — we’ll quote before we roll.
+            Outside that? Add an add-on or text a yard photo for a quick quote.
+          </div>
+
+          <!-- FILL THE BLANK SPACE (LEFT BUBBLE) -->
+          <div class="value-grid">
+            <div class="value-card">
+              <strong>We don’t “half-scoop”</strong>
+              <p>We sweep in a grid, hit corners, and clean the “back corner of shame.”</p>
+            </div>
+            <div class="value-card">
+              <strong>Haul-away included</strong>
+              <p>No stink in your trash can. We bag it and take it with us.</p>
+            </div>
+          </div>
+
+          <div class="checklist">
+            <h3>What you get every visit</h3>
+            <ul>
+              <li><span class="dot"></span><span>Full yard sweep (front/back if needed)</span></li>
+              <li><span class="dot"></span><span>Double-bagged pickup + haul-away</span></li>
+              <li><span class="dot"></span><span>Text update when we’re on the way</span></li>
+              <li><span class="dot"></span><span>Reliable schedule you can actually count on</span></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -546,28 +627,29 @@
         <p>No contracts. No weird apps. Just scoop service that shows up.</p>
 
         <div class="select-grid" id="planGrid">
-          <div class="option active" data-plan="initial" data-amount="6000">
+          <!-- PRICING UPDATED -->
+          <div class="option active" data-plan="initial" data-amount="5000">
             <div>
               <div class="opt-title">First-time clean-up</div>
-              <div class="opt-sub">Get the yard back under control.</div>
+              <div class="opt-sub">One-time reset. Get the yard back to normal.</div>
             </div>
-            <div class="price">$60+</div>
+            <div class="price">$50</div>
           </div>
 
-          <div class="option" data-plan="weekly" data-amount="10000">
+          <div class="option" data-plan="weekly" data-amount="6000">
             <div>
-              <div class="opt-title">Weekly (4 visits)</div>
-              <div class="opt-sub">Most popular — stay clean all month.</div>
+              <div class="opt-title">Weekly (once a week)</div>
+              <div class="opt-sub">$60/mo. Best for keeping it consistently clean.</div>
             </div>
-            <div class="price">$100</div>
+            <div class="price">$60/mo</div>
           </div>
 
-          <div class="option" data-plan="biweekly" data-amount="6000">
+          <div class="option" data-plan="biweekly" data-amount="5000">
             <div>
-              <div class="opt-title">Bi-weekly (2 visits)</div>
-              <div class="opt-sub">Solid option for lighter use.</div>
+              <div class="opt-title">Bi-weekly</div>
+              <div class="opt-sub">$50. Solid option for lighter use.</div>
             </div>
-            <div class="price">$60</div>
+            <div class="price">$50</div>
           </div>
         </div>
 
@@ -615,7 +697,7 @@
 
           <div class="total">
             <strong>Total today</strong>
-            <div class="amt" id="totalAmt">$60.00</div>
+            <div class="amt" id="totalAmt">$50.00</div>
           </div>
 
           <div class="checkout-row">
@@ -737,7 +819,7 @@
     };
 
     let selectedPlan = "initial";
-    let baseAmount = 6000;
+    let baseAmount = 5000;
 
     function formatUSD(cents){
       return (cents / 100).toLocaleString("en-US", { style:"currency", currency:"USD" });
@@ -782,12 +864,10 @@
     checkoutBtn.addEventListener("click", async () => {
       const total = calcTotal();
 
-      // Build a single “line item” to keep Worker logic simple.
-      // (Later we can send multiple items if you want.)
       const planNameMap = {
         initial: "First-time clean-up",
-        weekly: "Weekly (4 visits)",
-        biweekly: "Bi-weekly (2 visits)"
+        weekly: "Weekly (once a week) — $60/mo",
+        biweekly: "Bi-weekly"
       };
 
       const addOnLabels = [];
@@ -825,7 +905,7 @@
         });
 
         const data = await res.json();
-        if (!res.ok) throw new Error(data?.error || "Checkout failed");
+        if (!res.ok) throw new Error(data?.error || data?.details || "Checkout failed");
 
         if (data?.url) {
           window.location.href = data.url;
