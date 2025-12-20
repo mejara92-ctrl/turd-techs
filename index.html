@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Turd Techs scoops dog poop in Lawton, Fort Sill, Elgin and nearby. Pick a plan, add-ons if needed, and check out in seconds. Clean yard, zero landmines."
+    content="Turd Techs scoops dog poop in Lawton, Fort Sill, Elgin and nearby. Pick a monthly plan, add-ons if needed, and check out in seconds. Clean yard, zero landmines."
   />
 
   <style>
@@ -578,7 +578,7 @@
           </p>
 
           <div class="badges">
-            <span class="badge hot">Weekly / Bi-weekly</span>
+            <span class="badge hot">Monthly plans</span>
             <span class="badge">Haul-away included</span>
             <span class="badge">Military-friendly scheduling</span>
           </div>
@@ -624,32 +624,32 @@
       <!-- CART / BOOKING -->
       <aside id="book" class="card">
         <h3>Pick a plan → Checkout</h3>
-        <p>No contracts. No weird apps. Just scoop service that shows up.</p>
+        <p>Clear monthly pricing. You’re paying for the plan month today.</p>
 
         <div class="select-grid" id="planGrid">
-          <!-- PRICING UPDATED -->
           <div class="option active" data-plan="initial" data-amount="5000">
             <div>
-              <div class="opt-title">First-time clean-up</div>
-              <div class="opt-sub">One-time reset. Get the yard back to normal.</div>
+              <div class="opt-title">First-time clean-up (one-time)</div>
+              <div class="opt-sub">One-time reset to get the yard back to normal.</div>
             </div>
             <div class="price">$50</div>
           </div>
 
-          <div class="option" data-plan="weekly" data-amount="6000">
+          <!-- UPDATED PRICING + VERY CLEAR WORDING -->
+          <div class="option" data-plan="weekly" data-amount="10000">
             <div>
-              <div class="opt-title">Weekly (once a week)</div>
-              <div class="opt-sub">$60/mo. Best for keeping it consistently clean.</div>
+              <div class="opt-title">Weekly plan (4 visits/month)</div>
+              <div class="opt-sub"><strong style="color:var(--text);font-weight:800;">$100 per month</strong> — billed today for your month of weekly scoops.</div>
+            </div>
+            <div class="price">$100/mo</div>
+          </div>
+
+          <div class="option" data-plan="biweekly" data-amount="6000">
+            <div>
+              <div class="opt-title">Bi-weekly plan (2 visits/month)</div>
+              <div class="opt-sub"><strong style="color:var(--text);font-weight:800;">$60 per month</strong> — billed today for your month of bi-weekly scoops.</div>
             </div>
             <div class="price">$60/mo</div>
-          </div>
-
-          <div class="option" data-plan="biweekly" data-amount="5000">
-            <div>
-              <div class="opt-title">Bi-weekly</div>
-              <div class="opt-sub">$50. Solid option for lighter use.</div>
-            </div>
-            <div class="price">$50</div>
           </div>
         </div>
 
@@ -696,7 +696,7 @@
           </div>
 
           <div class="total">
-            <strong>Total today</strong>
+            <strong>Total today (this month)</strong>
             <div class="amt" id="totalAmt">$50.00</div>
           </div>
 
@@ -709,7 +709,7 @@
 
           <div class="fineprint" style="margin-top:10px;">
             After checkout, you’ll get a confirmation screen.
-            We’ll text to confirm gate access + timing.
+            We’ll text to confirm gate access + your route day/time window.
           </div>
         </div>
       </aside>
@@ -864,14 +864,15 @@
     checkoutBtn.addEventListener("click", async () => {
       const total = calcTotal();
 
+      // VERY CLEAR LABELS (what customer sees in Stripe line item name)
       const planNameMap = {
-        initial: "First-time clean-up",
-        weekly: "Weekly (once a week) — $60/mo",
-        biweekly: "Bi-weekly"
+        initial: "First-time clean-up (one-time) — $50",
+        weekly: "Weekly plan (4 visits/month) — $100/month",
+        biweekly: "Bi-weekly plan (2 visits/month) — $60/month"
       };
 
       const addOnLabels = [];
-      if (addonExtraDog.checked) addOnLabels.push("Extra dog");
+      if (addonExtraDog.checked) addOnLabels.push("Extra dog (4+ dogs)");
       if (addonLargeYard.checked) addOnLabels.push("Large yard / heavy build-up");
       if (addonSameDay.checked) addOnLabels.push("Same-day rush");
 
@@ -897,6 +898,7 @@
             ],
             meta: {
               selectedPlan,
+              baseMonthlyAmount: baseAmount,
               extraDog: addonExtraDog.checked ? "yes" : "no",
               largeYard: addonLargeYard.checked ? "yes" : "no",
               sameDay: addonSameDay.checked ? "yes" : "no"
